@@ -1,0 +1,12 @@
+.photo:hover {
+    transition: all 1s;
+}
+
+.click {
+    position: absolute;
+    font-size: 50px;
+    transition: all 1s;
+    bottom: 0;
+    margin-bottom: 15px;
+    margin-left: 170px;
+}

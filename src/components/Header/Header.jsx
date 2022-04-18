@@ -1,13 +1,12 @@
 import React from 'react';
 import { Container, Navbar, Nav, Offcanvas } from 'react-bootstrap';
-import navbarBrandImg from '../../assets/images/navbar-brand-img.svg';
 
 const Header = () => {
   return (
     <Navbar bg="light" expand={false} fixed="top">
       <Container fluid>
         <Navbar.Brand>
-          Галерея <img src={navbarBrandImg} alt="navbar brand" />
+          <h1 className="classes.brandHeader">Галерея</h1>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar" />
         <Navbar.Offcanvas id="offcanvasNavbar" placement="start">

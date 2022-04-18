@@ -1,0 +1,11 @@
+.categories {
+    margin-top: 100px;
+}
+
+.categoryBtn {
+    margin-right: 45px;
+}
+
+.categoryBtn:last-child {
+    margin-right: 0;
+}
