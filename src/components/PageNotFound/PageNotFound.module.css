@@ -1,0 +1,16 @@
+.imgWrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgWrapper > img {
+    width: 40%;
+}
+
+@media (max-width: 567px) {
+    .imgWrapper>img {
+        width: 100%;
+    }
+}

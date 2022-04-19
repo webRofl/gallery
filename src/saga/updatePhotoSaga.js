@@ -5,7 +5,6 @@ import { getPhotosPromise } from '../api/photosApi';
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 function* getPhotosWorker(action) {
-  console.log(action.albumId);
   yield delay(500);
   const data = yield call(() => getPhotosPromise(action.albumId));
   yield put(updatePhotosSuccess(action.albumId, data));

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Navbar, Nav, Offcanvas } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -13,8 +14,8 @@ const Header = () => {
           <Offcanvas.Header closeButton className=""></Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              <Nav.Link href="#action1">Галерея</Nav.Link>
-              <Nav.Link href="#action2">Обо мне</Nav.Link>
+              <NavLink to="/gallery">Галерея</NavLink>
+              <NavLink to="/aboutMe">Обо мне</NavLink>
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>
