@@ -14,3 +14,12 @@
     margin-bottom: 15px;
     margin-left: 170px;
 }
+
+@media (max-width: 567px) {
+    .photo {
+        width: 370px !important;
+    }
+    .imgWrapper {
+        width: 370px !important;
+    }
+}

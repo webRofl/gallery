@@ -38,8 +38,8 @@ const Gallery = (props) => {
   return (
     <>
       <Row className={classes.categories}>
-        <Col>
-          <h1>Категории</h1>
+        <Col style={{ textAlign: 'center' }}>
+          <h1 style={{ marginBottom: '20px' }}>Категории</h1>
           {buttons.map((btn) => {
             return (
               <Button

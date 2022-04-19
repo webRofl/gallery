@@ -9,14 +9,16 @@ import PhotoInfo from './PhotoInfo/PhotoInfo';
 const Photos = (props) => {
   const [modalId, setModalId] = useState(-1);
 
-  console.log(modalId);
-
   if (props.isFetching) {
     return <Preloader />;
   }
 
   if (!props.photos) {
-    return <h1>Выберите категорию</h1>;
+    return (
+      <div className={classes.selectCategory}>
+        <h1>Выберите категорию</h1>
+      </div>
+    );
   }
 
   return (

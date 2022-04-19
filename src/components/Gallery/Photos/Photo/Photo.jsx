@@ -20,6 +20,8 @@ const Photo = (props) => {
 
   const divStyle = {
     backgroundImage: `url(${props.photo.url})`,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
     width: '600px',
     height: '600px',
     marginBottom: '25px',
@@ -35,7 +37,7 @@ const Photo = (props) => {
   };
 
   return (
-    <Col className={classes.imgWrapper}>
+    <Col className={classes.imgWrapper} xxl="4" xl="6" lg="12" md="12" sm="12">
       <div
         style={divStyle}
         title={props.photo.title}
@@ -43,7 +45,6 @@ const Photo = (props) => {
         onMouseOver={handleOver}
         data-id={props.index + 1}
         onMouseLeave={handleLeave}
-        lg="6"
       >
         {props.modalId === -1 ? (
           <Button
