@@ -31,6 +31,7 @@ const Gallery = (props) => {
 
   const handleClick = (event) => {
     setSelected(event.target.dataset.id);
+    props.zeroState();
     props.setIsFetching(true);
     props.updatePhotos(event.target.dataset.id);
   };
@@ -62,6 +63,8 @@ const Gallery = (props) => {
       <Photos
         photos={props.categories[selected]?.photos}
         isFetching={props.isFetching}
+        updatePhotos={props.updatePhotos}
+        zeroState={props.zeroState}
       />
     </>
   );

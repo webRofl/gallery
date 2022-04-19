@@ -1,6 +1,7 @@
 const UPDATE_PHOTOS_SUCCESS = 'galleryReducer/UPDATE_PHOTOS_SUCCESS';
 export const UPDATE_PHOTOS = 'galleryReducer/UPDATE_PHOTOS';
 const SET_IS_FETCHING = 'galleryReducer/SET_IS_FETCHING';
+const ZERO_STATE = 'galleryReducer/ZERO_STATE';
 
 const initialState = {
   categories: {
@@ -37,6 +38,8 @@ const galleryReducer = (state = initialState, action) => {
         ...state,
         isFetching: action.isFetching,
       };
+    case ZERO_STATE:
+      return initialState;
     default:
       return state;
   }
@@ -52,5 +55,7 @@ export const setIsFetching = (isFetching) => ({
   type: SET_IS_FETCHING,
   isFetching,
 });
+
+export const zeroState = () => ({ type: ZERO_STATE });
 
 export default galleryReducer;

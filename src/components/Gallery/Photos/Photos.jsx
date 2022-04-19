@@ -36,6 +36,8 @@ const Photos = (props) => {
               setModalId={setModalId}
               index={index}
               modalId={modalId}
+              updatePhotos={props.updatePhotos}
+              zeroState={props.zeroState}
             />
           );
         })}
