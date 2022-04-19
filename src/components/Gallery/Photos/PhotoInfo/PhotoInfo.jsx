@@ -12,8 +12,15 @@ const PhotoInfo = (props) => {
         className={classes.cardImg}
       />
       <Card.Body>
-        <Card.Title>категория {props.photo.albumId}</Card.Title>
-        <Card.Text>{props.photo.title}</Card.Text>
+        <Card.Title>{props.photo.title}</Card.Title>
+        <Card.Text>
+          photo id: {props.photo.id}
+          <br />
+          photo url:{' '}
+          <a href={props.photo.url} target="_blank" rel="noreferrer">
+            {props.photo.url}
+          </a>
+        </Card.Text>
       </Card.Body>
     </Card>
   );
