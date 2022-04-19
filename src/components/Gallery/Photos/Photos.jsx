@@ -3,8 +3,14 @@ import { Row } from 'react-bootstrap';
 import Preloader from '../../../common/Preloader/Preloader';
 import classes from './Photos.module.css';
 import Photo from './Photo/Photo';
+import { useState } from 'react';
+import PhotoInfo from './PhotoInfo/PhotoInfo';
 
 const Photos = (props) => {
+  const [modalId, setModalId] = useState(-1);
+
+  console.log(modalId);
+
   if (props.isFetching) {
     return <Preloader />;
   }
@@ -16,8 +22,20 @@ const Photos = (props) => {
   return (
     <>
       <Row className={classes.photosRow}>
-        {props.photos.map((photo) => {
-          return <Photo photo={photo} key={photo.id} />;
+        {props.photos.map((photo, index) => {
+          if (index === parseInt(modalId) - 1)
+            return (
+              <PhotoInfo photo={photo} setModalId={setModalId} key={photo.id} />
+            );
+          return (
+            <Photo
+              photo={photo}
+              key={photo.id}
+              setModalId={setModalId}
+              index={index}
+              modalId={modalId}
+            />
+          );
         })}
       </Row>
     </>

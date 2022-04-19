@@ -15,7 +15,7 @@ const Photo = (props) => {
   };
 
   const handleClick = (event) => {
-    // upload about me component
+    props.setModalId(event.target.dataset.id);
   };
 
   const divStyle = {
@@ -35,25 +35,28 @@ const Photo = (props) => {
   };
 
   return (
-    <Col lg="6" className={classes.imgWrapper}>
+    <Col className={classes.imgWrapper}>
       <div
         style={divStyle}
         title={props.photo.title}
         className={classes.photo}
         onMouseOver={handleOver}
-        data-id={props.photo.id}
+        data-id={props.index + 1}
         onMouseLeave={handleLeave}
+        lg="6"
       >
-        <Button
-          variant="info"
-          className={classes.click}
-          style={parseInt(showId) === props.photo.id ? pStyleActive : pStyle}
-          data-id={props.photo.id}
-          title=""
-          onClick={handleClick}
-        >
-          Подробнее
-        </Button>
+        {props.modalId === -1 ? (
+          <Button
+            variant="info"
+            className={classes.click}
+            style={parseInt(showId) === props.index + 1 ? pStyleActive : pStyle}
+            data-id={props.index + 1}
+            title=""
+            onClick={handleClick}
+          >
+            Подробнее
+          </Button>
+        ) : null}
       </div>
     </Col>
   );
